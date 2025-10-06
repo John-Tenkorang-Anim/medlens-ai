@@ -21,7 +21,7 @@ class Config:
     EPOCHS = 10
     DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-print(f"🚀 Using device: {Config.DEVICE}")
+print(f" Using device: {Config.DEVICE}")
 
 # ==================== DATASET CLASS ====================
 class ChestXRayDataset(Dataset):
