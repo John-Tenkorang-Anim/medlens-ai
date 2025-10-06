@@ -54,7 +54,7 @@ with torch.no_grad():
 
 # Classification report
 print("\n" + "="*60)
-print("📊 CLASSIFICATION REPORT")
+print(" CLASSIFICATION REPORT")
 print("="*60)
 print(classification_report(
     all_labels, 
@@ -80,7 +80,7 @@ plt.ylabel('True Label', fontsize=12)
 plt.xlabel('Predicted Label', fontsize=12)
 plt.tight_layout()
 plt.savefig('outputs/confusion_matrix.png', dpi=300)
-print("\n✅ Confusion matrix saved to outputs/confusion_matrix.png")
+print("\n Confusion matrix saved to outputs/confusion_matrix.png")
 
 # ROC Curve
 fpr, tpr, thresholds = roc_curve(all_labels, all_probs)
@@ -98,11 +98,11 @@ plt.legend(loc="lower right", fontsize=10)
 plt.grid(alpha=0.3)
 plt.tight_layout()
 plt.savefig('outputs/roc_curve.png', dpi=300)
-print("✅ ROC curve saved to outputs/roc_curve.png")
+print(" ROC curve saved to outputs/roc_curve.png")
 
 # Summary statistics
 print("\n" + "="*60)
-print("🎯 SUMMARY STATISTICS")
+print(" SUMMARY STATISTICS")
 print("="*60)
 print(f"AUC-ROC Score:        {auc:.4f}")
 print(f"Total Test Samples:   {len(all_labels)}")
@@ -110,4 +110,4 @@ print(f"Correct Predictions:  {sum([1 for i in range(len(all_preds)) if all_pred
 print(f"Accuracy:             {100 * sum([1 for i in range(len(all_preds)) if all_preds[i] == all_labels[i]]) / len(all_labels):.2f}%")
 print("="*60)
 
-print("\n✅ Evaluation complete!")
+print("\n Evaluation complete!")
