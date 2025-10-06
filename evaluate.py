@@ -33,7 +33,7 @@ test_transform = transforms.Compose([
 
 print("📂 Loading test dataset...")
 test_dataset = ChestXRayDataset('data/test', transform=test_transform)
-test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=2)
+test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=0)
 
 # Evaluate model
 print("🔍 Evaluating model...")
