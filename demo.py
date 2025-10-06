@@ -22,7 +22,7 @@ model = MedLensNet().to(Config.DEVICE)
 
 # Check if model file exists
 if not os.path.exists('models/best_model.pth'):
-    print("❌ Error: models/best_model.pth not found!")
+    print(" Error: models/best_model.pth not found!")
     print("Please run 'python train.py' first to train the model.")
     sys.exit(1)
 
@@ -132,7 +132,7 @@ This system uses a ResNet-18 deep learning model trained on 5,856 chest X-rays t
 Unlike black-box AI, it provides visual explanations using Grad-CAM (Gradient-weighted Class Activation Mapping),
 showing exactly which lung regions influenced the prediction.
 
-**⚠️ Disclaimer:** This is a research prototype. Not for clinical use. Always consult healthcare professionals.
+** Disclaimer:** This is a research prototype. Not for clinical use. Always consult healthcare professionals.
 
 ### How It Works
 1. **ResNet-18** extracts features from the X-ray
@@ -147,6 +147,6 @@ Built with PyTorch • Transfer Learning • Explainable AI
 )
 
 if __name__ == "__main__":
-    print("🚀 Launching MedLens AI...")
-    print("📱 Opening browser interface...")
+    print(" Launching MedLens AI...")
+    print(" Opening browser interface...")
     interface.launch(share=True)
