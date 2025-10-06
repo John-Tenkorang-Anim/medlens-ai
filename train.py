@@ -37,7 +37,7 @@ class ChestXRayDataset(Dataset):
         for label_idx, label_name in enumerate(['NORMAL', 'PNEUMONIA']):
             label_dir = os.path.join(data_dir, label_name)
             if not os.path.exists(label_dir):
-                print(f"⚠️  Warning: {label_dir} not found!")
+                print(f" Warning: {label_dir} not found!")
                 continue
             
             for img_name in os.listdir(label_dir):
@@ -154,7 +154,7 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, epochs):
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             torch.save(model.state_dict(), 'models/best_model.pth')
-            print(f'✅ Saved best model (Val Acc: {val_acc:.2f}%)')
+            print(f'Saved best model (Val Acc: {val_acc:.2f}%)')
     
     return model, history
 
@@ -198,14 +198,14 @@ if __name__ == "__main__":
     )
     
     # Initialize model
-    print("\n🧠 Initializing model...")
+    print("\n Initializing model...")
     model = MedLensNet().to(Config.DEVICE)
     
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=Config.LEARNING_RATE)
     
     # Train
-    print("\n🚀 Starting training...")
+    print("\n Starting training...")
     model, history = train_model(
         model, train_loader, val_loader, 
         criterion, optimizer, Config.EPOCHS
@@ -213,7 +213,7 @@ if __name__ == "__main__":
     
     # Save final model
     torch.save(model.state_dict(), 'models/final_model.pth')
-    print("\n✅ Training complete! Model saved to models/final_model.pth")
+    print("\n Training complete! Model saved to models/final_model.pth")
     
     # Plot training history
     plt.figure(figsize=(12, 4))
@@ -236,4 +236,4 @@ if __name__ == "__main__":
     
     plt.tight_layout()
     plt.savefig('outputs/training_history.png')
-    print("📊 Training plots saved to outputs/training_history.png")
+    print(" Training plots saved to outputs/training_history.png")
